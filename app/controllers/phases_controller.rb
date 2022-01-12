@@ -5,7 +5,7 @@ class PhasesController < ApplicationController
   def index
     @phases = Phase.all
 
-    render json: @phases
+    render json: @phases, include: {mods: {except: [:created_at, :updated_at]}}, except: [:created_at, :updated_at]
   end
 
   # GET /phases/1
