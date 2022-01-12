@@ -62,7 +62,7 @@ all_phases = (1..4).to_a.map do |num|
     
     mods = html.css('li').map do |li|
         mod = li.inner_html.split(/[()]+/)
-        if(mod.length > 1)
+        if(mod.length > 1 && !mod[0].blank?)
             title = mod[0]
             amount_check = mod[1].split(" - ")
             if(amount_check.length > 1)
