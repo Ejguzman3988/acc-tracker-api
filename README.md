@@ -1,24 +1,5 @@
-# README
+# Account Tracker Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Link to the [client](https://github.com/Ejguzman3988/acc-tracker-client)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This will be what we use to track our meetings and goals for our 15 minute sessions. It will be a good place to see where you are in the current month and where you will need to be in the coming days. 
