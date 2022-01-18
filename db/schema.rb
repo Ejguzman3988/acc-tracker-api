@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_12_035202) do
+ActiveRecord::Schema.define(version: 2022_01_12_142213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "breakdowns", force: :cascade do |t|
+    t.integer "week_range"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "mods", force: :cascade do |t|
     t.string "title"
@@ -22,6 +28,8 @@ ActiveRecord::Schema.define(version: 2022_01_12_035202) do
     t.bigint "phase_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "breakdown_id", null: false
+    t.index ["breakdown_id"], name: "index_mods_on_breakdown_id"
     t.index ["phase_id"], name: "index_mods_on_phase_id"
   end
 
@@ -31,5 +39,6 @@ ActiveRecord::Schema.define(version: 2022_01_12_035202) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "mods", "breakdowns"
   add_foreign_key "mods", "phases"
 end
