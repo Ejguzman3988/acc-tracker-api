@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blockers: MyText
+  knowledge: MyText
+  timing: MyText
+  amount: MyText
+  user: one
+
+two:
+  blockers: MyText
+  knowledge: MyText
+  timing: MyText
+  amount: MyText
+  user: two

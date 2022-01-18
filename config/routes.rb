@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :goals
+  resources :users
   resources :breakdowns
   resources :mods
   resources :phases
