@@ -1,5 +1,4 @@
 class GoalsController < ApplicationController
-  # skip_before_action :authorize  
   before_action :set_goal, only: [:show, :update, :destroy]
 
   # GET /goals
@@ -47,6 +46,6 @@ class GoalsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def goal_params
-      params.require(:goal).permit(:blockers, :knowledge, :timing, :amount, :user_id)
+      params.require(:goal).permit(:goal, :blockers, :knowledge, :timing, :amount, :user_id)
     end
 end
