@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :goals
-  resources :users
+  post "/signup", to: "users#create"
+  get "/me", to: "users#show"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   resources :breakdowns
   resources :mods
   resources :phases

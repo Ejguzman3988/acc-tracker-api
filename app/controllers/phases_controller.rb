@@ -1,5 +1,6 @@
 class PhasesController < ApplicationController
   before_action :set_phase, only: [:show, :update, :destroy]
+  skip_before_action :authorize
 
   # GET /phases
   def index

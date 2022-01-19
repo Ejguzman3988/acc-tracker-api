@@ -1,4 +1,5 @@
 class GoalsController < ApplicationController
+  # skip_before_action :authorize  
   before_action :set_goal, only: [:show, :update, :destroy]
 
   # GET /goals
@@ -18,7 +19,7 @@ class GoalsController < ApplicationController
     @goal = Goal.new(goal_params)
 
     if @goal.save
-      render json: @goal, status: :created, location: @goal
+      render json:  @goal, status: :created, location: @goal
     else
       render json: @goal.errors, status: :unprocessable_entity
     end

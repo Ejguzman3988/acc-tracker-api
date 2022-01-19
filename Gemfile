@@ -44,3 +44,5 @@ gem "httparty", "~> 0.20.0"
 gem "pry", "~> 0.14.1"
 
 gem "redcarpet", "~> 3.5"
+
+gem "active_model_serializers", "~> 0.10.13"

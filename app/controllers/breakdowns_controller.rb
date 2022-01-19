@@ -1,5 +1,6 @@
 class BreakdownsController < ApplicationController
   before_action :set_breakdown, only: [:show, :update, :destroy]
+  skip_before_action :authorize
 
   # GET /breakdowns
   def index
