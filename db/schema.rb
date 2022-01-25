@@ -10,15 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_19_170824) do
+ActiveRecord::Schema.define(version: 2022_01_25_154032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "breakdowns", force: :cascade do |t|
-    t.integer "week_range"
+    t.string "week_range"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "description"
+    t.string "total_assignments"
+    t.bigint "phase_id"
+    t.index ["phase_id"], name: "index_breakdowns_on_phase_id"
   end
 
   create_table "goals", force: :cascade do |t|
@@ -59,6 +63,7 @@ ActiveRecord::Schema.define(version: 2022_01_19_170824) do
     t.string "start_date"
   end
 
+  add_foreign_key "breakdowns", "phases"
   add_foreign_key "goals", "users"
   add_foreign_key "mods", "breakdowns"
   add_foreign_key "mods", "phases"

@@ -6,7 +6,7 @@ class BreakdownsController < ApplicationController
   def index
     @breakdowns = Breakdown.all
 
-    render json: @breakdowns
+    render json: @breakdowns, include: {phase: {except: [:created_at, :updated_at]},mods: {except: [:created_at, :updated_at]}}, except: [:phase_id, :created_at, :updated_at]
   end
 
   # GET /breakdowns/1

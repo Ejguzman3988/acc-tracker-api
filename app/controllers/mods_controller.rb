@@ -46,6 +46,6 @@ class ModsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def mod_params
-      params.require(:mod).permit(:title, :amount, :optional, :phase_id)
+      params.require(:mod).permit(:title, :amount, :optional, :phase_id, :breakdown_id, :total_assignments, :description)
     end
 end
