@@ -72,7 +72,6 @@ all_phases = (1..4).to_a.map.with_index(1) do |num, phase_id|
         total_assignments = next_content(element.next_element)
         if head.split(" ")[0] == "Weeks" || head.split(" ")[0] == "Week"
             node = element
-            # binding.pry
             while node && node.css('li').length == 0 do
                 node = node.next_element
             end
@@ -90,9 +89,6 @@ all_phases = (1..4).to_a.map.with_index(1) do |num, phase_id|
     week_headers = html.css('h2').map.with_index(0) do |head, index|
        create_hash(head, index, phase_id)
     end
-    
-    #TODO: NEED TO ADD BREAKDOWN TO MOD!
-    # LOOP THROUGH LIS AND CREATE A LESSONS OBJECT FOR EACH
 end
 numStringArr = ["One", "Two", "Three", "Four"]
 phases = all_phases.map.with_index(0) do |breakdownArr, index|

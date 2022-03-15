@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "users#show"
   resources :goals
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
