@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::API
     include ActionController::Cookies
-  
-    rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
-  
+    include ActionController::RequestForgeryProtection
+    protect_from_forgery with: :exception
+    skip_before_action :verify_authenticity_token
     before_action :authorize
   
     private
