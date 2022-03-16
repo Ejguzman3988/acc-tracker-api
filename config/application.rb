@@ -22,8 +22,10 @@ Bundler.require(*Rails.groups)
 module AccTrackerApi
   class Application < Rails::Application
     # Adding cookies and session middleware
+    config.session_store :cookie_store, key: '_interslice_session'
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use config.session_store, config.session_options
 
     # Use SameSite=Strict for all cookies to help protect against CSRF
     # https://owasp.org/www-community/SameSite
