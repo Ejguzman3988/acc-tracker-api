@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::API
     before_action :set_csrf_cookie
+    skip_before_action :verify_authenticity_token
     include ActionController::Cookies
     include ActionController::RequestForgeryProtection
     protect_from_forgery with: :exception, prepend: true
-    skip_before_action :verify_authenticity_token
     before_action :authorize
 
     before_filter :cor
