@@ -2,8 +2,8 @@ class ApplicationController < ActionController::API
     before_action :set_csrf_cookie
     include ActionController::Cookies
     include ActionController::RequestForgeryProtection
-  
-    protect_from_forgery with: :exception 
+
+    protect_from_forgery with: :null_session
     before_action :authorize
 
     def cookie 
