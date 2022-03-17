@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
     def set_csrf_cookie
        cookies["CSRF-TOKEN"] = {
             value: form_authenticity_token,
-            domain: 'desolate-citadel-26683.herokuapp.com'
+            domain: :all 
         }
     end
   
