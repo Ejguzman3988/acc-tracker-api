@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "/" to: "application#cookie" as: :root
+  root to: "application#cookie"
   resources :goals
   post "/signup", to: "users#create"
   get "/me", to: "users#show"
