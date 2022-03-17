@@ -48,3 +48,4 @@ gem "redcarpet", "~> 3.5"
 gem "active_model_serializers", "~> 0.10.13"
 
 gem 'rails_same_site_cookie'
+gem "dotenv", "~> 2.7"
