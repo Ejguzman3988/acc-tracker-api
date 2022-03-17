@@ -7,7 +7,7 @@ class ApplicationController < ActionController::API
     before_action :authorize
 
     def cookie 
-        "ok"
+        render json:{ ok: :ok, csrf: form_authenticity_token }
     end
   
     private
