@@ -1,11 +1,23 @@
 class ApplicationController < ActionController::API
+    before_action :set_csrf_cookie
     include ActionController::Cookies
     include ActionController::RequestForgeryProtection
-    protect_from_forgery with: :exception
-    skip_before_action :verify_authenticity_token
+  
+    protect_from_forgery with: :exception 
     before_action :authorize
+
+    def cookie 
+        "ok"
+    end
   
     private
+
+    def set_csrf_cookie
+       cookies["CSRF-TOKEN"] = {
+            value: form_authenticity_token,
+            domain: :all 
+        }
+    end
   
     def authorize
       @current_user = User.find_by(id: session[:user_id])
